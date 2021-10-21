@@ -5,7 +5,7 @@ const app = express();
 
 app.get('/api/greeting', (req, res) => {
   res.send({
-    message: `Hello, ${req.query.name || 'World'}!`,
+    message: `Hello, ${req.query.name || 'Worlder'}!`,
   });
 });
 
