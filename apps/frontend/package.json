@@ -31,7 +31,10 @@
   "type": "module",
   "prettier": "@warehouse_management/prettier-config",
   "lint-staged": {
-    "*.{js,json,scss,html,md}": [],
+    "*.{js,json,scss,html,md}": [
+      "prettier --write",
+      "git add"
+    ],
     "*.css": [
       "stylelint --formatter --fix verbose --config .stylelintrc 'app/css/*.css'"
     ]
