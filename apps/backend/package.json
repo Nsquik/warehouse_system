@@ -24,6 +24,9 @@
     "nodemon": "2.0.14"
   },
   "lint-staged": {
-    "*.{js,json,css,scss,html,md}": []
+    "*.{js,json,css,scss,html,md}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
