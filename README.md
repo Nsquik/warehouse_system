@@ -6,6 +6,8 @@
 	- husky pre-commits
 	- commitizen
 	- cz-conventional-changelog
+	- precise-commits
+	- lint-staged
 2. Back-end
 	- nod
 	- express
