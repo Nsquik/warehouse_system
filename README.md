@@ -1,7 +1,7 @@
 # Warehouse Management System
 ### Stack
 1. Project management
-	- yar
+	- yarn
 	- lerna monorepo
 	- husky pre-commits
 	- commitizen
@@ -16,7 +16,7 @@
 ### How to run project?!
 ```console
 1. Run `yarn`
-2. To run project use `yarnstart`
+2. To run project use `yarn start`
 3. Open back-end on `localhost:8080`
 4. Open front-end on `localhost:5000`
 ``
