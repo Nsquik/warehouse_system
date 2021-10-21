@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-import sass from 'gulp-sass';
 import postcss from 'gulp-postcss';
 import cssnano from 'cssnano';
 import terser from 'gulp-terser';
@@ -18,11 +17,11 @@ const paths = {
     dest: 'dist/scripts/',
     all: 'app/js/**/*.js',
   },
-  sass: {
-    main: 'app/scss/main.scss',
-    src: 'app/scss/*.scss',
+  css: {
+    main: 'app/css/main.css',
+    src: 'app/css/*.css',
     dest: 'dist/styles/',
-    all: 'app/scss/**/*.scss',
+    all: 'app/css/**/*.css',
   },
   html: {
     baseDir: 'app/pages/',
@@ -32,12 +31,11 @@ const paths = {
   },
 };
 
-// Sass Task
-function scssTask() {
+// css Task
+function cssTask() {
   return gulp
-    .src(paths.sass.all, { sourcemaps: true })
+    .src(paths.css.all, { sourcemaps: true })
     .pipe(concat('style.css'))
-    .pipe(sass())
     .pipe(postcss([cssnano()]))
     .pipe(gulp.dest('dist', { sourcemaps: '.' }));
 }
@@ -78,13 +76,10 @@ function browsersyncReload(cb) {
 function watchTask() {
   gulp.watch('*.html', browsersyncReload);
   gulp.watch(
-    [paths.sass.all, paths.scripts.all],
-    gulp.series(scssTask, jsTask, browsersyncReload)
+    [paths.css.all, paths.scripts.all],
+    gulp.series(cssTask, jsTask, browsersyncReload)
   );
 }
 
 // Default Gulp task
-gulp.task(
-  'default',
-  gulp.series(scssTask, jsTask, browsersyncServe, watchTask)
-);
+gulp.task('default', gulp.series(cssTask, jsTask, browsersyncServe, watchTask));
