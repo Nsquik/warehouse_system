@@ -6,4 +6,7 @@ module.exports = {
     node: true,
   },
   extends: ["eslint:recommended"],
+  parserOptions: {
+    sourceType: "module",
+  },
 };
