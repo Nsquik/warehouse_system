@@ -11,19 +11,19 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.13",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^9.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-terser": "^1.4.0",
-    "http-proxy-middleware": "^2.0.1",
-    "postcss": "^8.1.2"
+    "browser-sync": "2.26.13",
+    "cssnano": "4.1.10",
+    "gulp": "4.0.2",
+    "gulp-concat": "2.6.1",
+    "gulp-postcss": "9.0.0",
+    "gulp-sass": "4.1.0",
+    "gulp-terser": "1.4.0",
+    "http-proxy-middleware": "2.0.1",
+    "postcss": "8.1.2"
   },
   "dependencies": {
-    "@warehouse_management/eslint-config": "^0.0.0",
-    "@warehouse_management/prettier-config": "^0.0.0"
+    "@warehouse_management/eslint-config": "0.0.0",
+    "@warehouse_management/prettier-config": "0.0.0"
   },
   "type": "module",
   "prettier": "@warehouse_management/prettier-config"

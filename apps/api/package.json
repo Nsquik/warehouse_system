@@ -13,13 +13,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@warehouse_management/eslint-config": "0.0.0",
-    "@warehouse_management/prettier-config": "0.0.0",
     "express": "4.17.1"
   },
   "prettier": "@warehouse_management/prettier-config",
   "devDependencies": {
-    "esm": "^3.2.25",
-    "nodemon": "^2.0.14"
+    "@warehouse_management/prettier-config": "0.0.0",
+    "@warehouse_management/eslint-config": "0.0.0",
+    "esm": "3.2.25",
+    "nodemon": "2.0.14"
   }
 }

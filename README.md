@@ -22,10 +22,9 @@
 
 ```console
 1. Run `npm install`
-2. Run `lerna bootstrap`
-3. Run `lerna run start`
+2. To run project use `npm run start`
 3. Open back-end on `localhost:8080`
-4. Open front-end on `localhost:3000`
+4. Open front-end on `localhost:5000`
 ```
 
 
