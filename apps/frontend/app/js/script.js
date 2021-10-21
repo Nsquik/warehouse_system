@@ -5,5 +5,3 @@ fruits.map((fruit) => {
 });
 
 fetch('/api/greeting');
-
-alert('XD');
