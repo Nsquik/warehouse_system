@@ -1,0 +1,6 @@
+{
+  "extends": ["@warehouse_management/eslint-config"],
+  "parserOptions": {
+    "sourceType": "module"
+  }
+}

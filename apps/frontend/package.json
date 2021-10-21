@@ -21,6 +21,10 @@
     "http-proxy-middleware": "^2.0.1",
     "postcss": "^8.1.2"
   },
-  "dependencies": {},
-  "type": "module"
+  "dependencies": {
+    "@warehouse_management/eslint-config": "^0.0.0",
+    "@warehouse_management/prettier-config": "^0.0.0"
+  },
+  "type": "module",
+  "prettier": "@warehouse_management/prettier-config"
 }

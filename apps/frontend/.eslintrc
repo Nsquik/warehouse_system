@@ -1,0 +1,5 @@
+{
+    "extends": [
+      "@warehouse_management/eslint-config"
+    ]
+  }
