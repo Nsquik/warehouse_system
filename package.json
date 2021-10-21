@@ -14,7 +14,7 @@
     "postinstall": "husky install && lerna bootstrap && lerna run start",
     "prettier": "prettier -w ./apps/",
     "prettier:touched": "precise-commits",
-    "precommit": "precise-commits && lint-staged",
+    "precommit": "precise-commits && lint-staged && lerna run css:lint",
     "start": "lerna run start"
   },
   "config": {
