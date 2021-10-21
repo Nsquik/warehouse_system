@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon -r esm index.js",
     "build": "tsc --project ./",
-    "precommit": "echo 'Api pre-commit running'"
+    "precommit": "echo 'Api pre-commit running'",
+    "lint-staged": "lint-staged"
   },
   "keywords": [],
   "author": "",
@@ -21,5 +22,8 @@
     "@warehouse_management/eslint-config": "0.0.0",
     "esm": "3.2.25",
     "nodemon": "2.0.14"
+  },
+  "lint-staged": {
+    "*.{js,json,css,scss,html,md}": []
   }
 }

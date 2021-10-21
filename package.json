@@ -6,7 +6,6 @@
     "cz-conventional-changelog": "3.3.0",
     "husky": "7.0.0",
     "lerna": "4.0.0",
-    "lint-staged": "11.2.3",
     "precise-commits": "1.0.2",
     "prettier": "2.4.1"
   },
@@ -14,18 +13,12 @@
     "postinstall": "husky install && lerna bootstrap && lerna run start",
     "prettier": "prettier -w ./apps/",
     "prettier:touched": "precise-commits",
-    "precommit": "precise-commits && lint-staged && lerna run css:lint",
+    "precommit:lint": "precise-commits && lerna run lint-staged",
     "start": "lerna run start"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "lint-staged": {
-    "*.{js,json,css,scss,html,md}": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }

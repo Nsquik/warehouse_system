@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
-    "css:lint": "stylelint --formatter --fix verbose --config .stylelintrc 'app/css/*.css'"
+    "lint-staged": "lint-staged"
   },
   "keywords": [],
   "author": "",
@@ -29,5 +29,11 @@
     "@warehouse_management/prettier-config": "0.0.0"
   },
   "type": "module",
-  "prettier": "@warehouse_management/prettier-config"
+  "prettier": "@warehouse_management/prettier-config",
+  "lint-staged": {
+    "*.{js,json,scss,html,md}": [],
+    "*.css": [
+      "stylelint --formatter --fix verbose --config .stylelintrc 'app/css/*.css'"
+    ]
+  }
 }
