@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------
 
 CREATE TABLE Token (
-  id          INTEGER PRIMARY KEY,
+  id          INTEGER PRIMARY KEY AUTOINCREMENT,
   userId      INTEGER NOT NULL,
   title       TEXT    NOT NULL,
   CONSTRAINT Token_fk_userId FOREIGN KEY (userId)
@@ -12,7 +12,6 @@ CREATE TABLE Token (
 
 CREATE INDEX Token_ix_userId ON Token (userId);
 
-INSERT INTO User (id, name, surname, age) VALUES (1, 'Kacper', 'Kedzierski', 22);
 
 
 
