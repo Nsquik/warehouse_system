@@ -5,22 +5,38 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp"
+    "start": "gulp",
+    "lint-staged": "lint-staged"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.13",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-postcss": "^9.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-terser": "^1.4.0",
-    "http-proxy-middleware": "^2.0.1",
-    "postcss": "^8.1.2"
+    "browser-sync": "2.26.13",
+    "cssnano": "4.1.10",
+    "gulp": "4.0.2",
+    "gulp-concat": "2.6.1",
+    "gulp-postcss": "9.0.0",
+    "gulp-sass": "4.1.0",
+    "gulp-terser": "1.4.0",
+    "http-proxy-middleware": "2.0.1",
+    "postcss": "8.1.2",
+    "stylelint": "13.13.1",
+    "stylelint-config-standard": "22.0.0"
   },
-  "dependencies": {},
-  "type": "module"
+  "dependencies": {
+    "@warehouse_management/eslint-config": "0.0.0",
+    "@warehouse_management/prettier-config": "0.0.0"
+  },
+  "type": "module",
+  "prettier": "@warehouse_management/prettier-config",
+  "lint-staged": {
+    "*.{js,json,scss,html,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --formatter --fix verbose --config .stylelintrc 'app/css/*.css'"
+    ]
+  }
 }

@@ -1,0 +1,32 @@
+{
+  "name": "@warehouse_management/api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -r esm index.js",
+    "build": "tsc --project ./",
+    "precommit": "echo 'Api pre-commit running'",
+    "lint-staged": "lint-staged"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1"
+  },
+  "prettier": "@warehouse_management/prettier-config",
+  "devDependencies": {
+    "@warehouse_management/prettier-config": "0.0.0",
+    "@warehouse_management/eslint-config": "0.0.0",
+    "esm": "3.2.25",
+    "nodemon": "2.0.14"
+  },
+  "lint-staged": {
+    "*.{js,json,css,scss,html,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
