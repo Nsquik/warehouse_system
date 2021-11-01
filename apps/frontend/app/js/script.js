@@ -4,4 +4,4 @@ fruits.map((fruit) => {
   console.log(fruit);
 });
 
-fetch('/api/greeting');
+fetch('/api/user');
