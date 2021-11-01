@@ -1,26 +1,28 @@
 import express from 'express';
-import { db, SQL } from './db/';
-import { user_router } from './routes/user';
+import { UserRouter } from './routes/user';
+import createError from 'http-errors';
 
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-app.get('/api/greeting', (req, res) => {
-  const user = db.prepare('SELECT * FROM User').all();
+app.use(express.json());
+
+app.use('/api', UserRouter);
+
+// ++++++++++++++++++
+/* ERROR HANDLERS */
+// ++++++++++++++++
+app.use(async (_req, _res, next) => {
+  next(new createError.NotFound('This route does not exist'));
+});
+app.use(async (err, _req, res, _next) => {
+  res.status(err.status || 500);
   res.send({
-    message: `Hello, ${req.query.name || ':)'}!`,
-    users: user,
+    error: {
+      status: err.status || 500,
+      message: err.message,
+    },
   });
 });
-
-app.get('/api/add', (req, res) => {
-  db.prepare(SQL('create/user.sql')).run('Janek', 'Ejsmont', 44);
-
-  res.send({
-    message: 'Added',
-  });
-});
-
-app.use('/api', user_router);
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));

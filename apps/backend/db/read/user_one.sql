@@ -1,1 +1,1 @@
-SELECT * FROM User where id = ?
+SELECT * FROM User where id = :id
