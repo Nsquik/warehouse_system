@@ -1,4 +1,4 @@
-# Monorepo test project with plain JS no libraries.
+# Monorepo test project with plain JS no *fancy* libraries.
 # Warehouse Management System
 ### Stack
 1. Project management
