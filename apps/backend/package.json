@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -r esm index.js",
+    "start": "npm run migrate && nodemon -r esm index.js",
+    "migrate": "node -e 'const db = require(\"./db\").db; require(\"./utils/migrate.js\").migrate(db, {})'",
     "build": "tsc --project ./",
     "precommit": "echo 'Api pre-commit running'",
     "lint-staged": "lint-staged"
@@ -14,13 +15,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "4.17.1"
+    "better-sqlite3": "7.4.4",
+    "express": "4.17.1",
+    "http-errors": "1.8.0"
   },
   "prettier": "@warehouse_management/prettier-config",
   "devDependencies": {
-    "@warehouse_management/prettier-config": "0.0.0",
     "@warehouse_management/eslint-config": "0.0.0",
+    "@warehouse_management/prettier-config": "0.0.0",
     "esm": "3.2.25",
+    "lint-staged": "11.2.6",
     "nodemon": "2.0.14"
   },
   "lint-staged": {
